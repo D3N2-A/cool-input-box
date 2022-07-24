@@ -14,3 +14,118 @@
     --normal-font-size: 1rem;
   }
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  background-color: var(--white-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.form {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.form-content {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.form-input,
+.form-label,
+.form-submit {
+  border: 0;
+  outline: none;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+.form-box {
+  width: 319px;
+  height: 59px;
+  position: relative;
+}
+.box-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black-color);
+}
+
+.form-input {
+  position: absolute;
+  border: 2.5px solid var(--black-color);
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-color);
+  z-index: 10;
+  padding: 18px;
+  transition: transform 0.3s;
+}
+
+.form-input::placeholder {
+  transition: opacity 0.5s;
+}
+
+.form-label {
+  z-index: 100;
+  position: absolute;
+  top: 16px;
+  left: 19px;
+  font-size: var(--tiny-font-size);
+  font-weight: 600;
+  transition: 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.form-button {
+  justify-self: flex-end;
+  background-color: var(--black-color);
+  border-radius: 150px;
+}
+
+.form-submit {
+  padding: 0.87rem 1.5rem;
+  color: var(--black-color);
+  background-color: var(--first-color);
+  transition: transform 0.3s;
+  cursor: pointer;
+  border-radius: 150px;
+}
+
+.form-submit:hover {
+  transform: translate(-6px, -6px);
+}
+
+.form-input:focus::placeholder {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.form-input:focus,
+.form-input:not(:placeholder-shown).form-input:not(:focus) {
+  transform: translate(-8px, -8px);
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+}
+.form-input:hover {
+  transform: translate(-8px, -8px);
+  transition: ease-in-out 0.3s;
+}
+
+.form-input:focus + .form-label,
+form-input:not(:placeholder-shown).form-input:not(:focus) + .form-label {
+  opacity: 1;
+  top: 1px;
+  left: 14px;
+  transition: 0.3s;
+}
+
+
