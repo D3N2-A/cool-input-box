@@ -114,10 +114,12 @@ body {
   transform: translate(-8px, -8px);
   border-radius: 10px;
   transition: ease-in-out 0.2s;
+  animation: focus-animation 0.5s;
 }
 .form-input:hover {
   transform: translate(-8px, -8px);
   transition: ease-in-out 0.3s;
+  animation: focus-animation 0.5s;
 }
 
 .form-input:focus + .form-label,
@@ -128,4 +130,27 @@ form-input:not(:placeholder-shown).form-input:not(:focus) + .form-label {
   transition: 0.3s;
 }
 
+@keyframes focus-animation {
+  0% {
+    transform: translate(1px, 1px);
+  }
+  40% {
+    transform: translate(-9px, -9px);
+  }
+  60% {
+    transform: translate(-6px, -6px);
+  }
+}
 
+@media screen and (max-width: 340px) {
+  .form-box,
+  .form-content {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 916px) {
+  .form-box,
+  .form-content {
+    zoom: 1.1;
+  }
+}
